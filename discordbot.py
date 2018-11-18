@@ -47,13 +47,17 @@ async def on_message(message):
     if message.content.lower().startswith("pair production"):
         await client.send_file(message.channel, "pairproduction.png")
 
-    if message.content.lower().startswith("subatomic") or message.content.lower().startswith("neutron") or message.content.lower().startswith("electron") \
+    if message.content.lower().startswith("subatomic") or message.content.lower().startswith("electron") \
     or message.content.lower().startswith("mass"):
         await client.send_file(message.channel, "subatomic.png")
 
+    if message.content.lower().startswith("neutron"):
+        await client.send_file(message.channel, "subatomic.png")
+        await client.send_message(message.channel, "It has a quark formation of udd")
+
     if message.content.lower().startswith("proton"):
         await client.send_file(message.channel, "subatomic.png")
-        await client.send_message(message.channel, "<@{}> The proton is the only stable hadron!".format(userID))
+        await client.send_message(message.channel, "<@{}> The proton is the only stable hadron! It's quarks are uud".format(userID))
 
     if message.content.lower().startswith("isotope") or message.content.lower().startswith("isotopes"):
         await client.send_file(message.channel, "isotope.png")
@@ -81,8 +85,27 @@ async def on_message(message):
         await client.send_file(message.channel, "photon.png")
         await client.send_file(message.channel, "photon1.png")
         await client.send_file(message.channel, "photon2.png")
+        await client.send_file(message.channel, "photon3.png")
 
+    if message.content.lower().startswith("neutrino") or message.content.lower().startswith("antineutrino") or message.content.lower().startswith("neutrinos") or message.content.lower().startswith("antineutrinos"):
+        await client.send_message(message.channel, "<@{}> The (anti)neutrino is important as it allows equations to follow the conservation of energy, the rest mass of a neutrino is 0 and so is its charge (There are different types of neutrinos as well!)".format(userID))
 
+    if message.content.lower().startswith("electron capture"):
+        await client.send_file(message.channel, "eCapture.png")
+
+    if message.content.lower().startswith("wnf") or message.content.lower().startswith("weak nuclear force"):
+        await client.send_file(message.channel, "wnf.png")
+
+    if message.content.lower().startswith("lepton") or message.content.lower().startswith("leptons"):
+        await client.send_file(message.channel, "lepton1.png")
+        await client.send_message(message.channel, "<@{}> Leptons are fundamental particles, all leptons have a lepton number, here are a few of them")
+        await client.send_file(message.channel, "lepton2.png")
+
+    if message.content.lower().startswith("hadron") or message.content.lower().startswith("hadrons"):
+        await client.send_file(message.channel, "hadron1.png")
+        await client.send_file(message.channel, "hadron2.png")
+        await client.send_message(message.channel, "Hadrons can be broken up into baryons and mesons (They're made up of quarks):")
+        await client.send_file(message.channel, "hadron3.png")
 
     await client.process_commands(message)  #important
 
