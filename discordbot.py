@@ -98,13 +98,13 @@ async def on_message(message):
 
     if message.content.lower().startswith("lepton") or message.content.lower().startswith("leptons"):
         await client.send_file(message.channel, "lepton1.png")
-        await client.send_message(message.channel, "<@{}> Leptons are fundamental particles, all leptons have a lepton number, here are a few of them".format(userID))
+        await client.send_message(message.channel, "<@{}> They are fundamental particles, all leptons have a lepton number, here are a few of them".format(userID))
         await client.send_file(message.channel, "lepton2.png")
 
     if message.content.lower().startswith("hadron") or message.content.lower().startswith("hadrons"):
         await client.send_file(message.channel, "hadron1.png")
         await client.send_file(message.channel, "hadron2.png")
-        await client.send_message(message.channel, "Hadrons can be broken up into baryons and mesons (They're made up of quarks):")
+        await client.send_message(message.channel, "They can be broken up into baryons and mesons (They're made up of quarks):")
         await client.send_file(message.channel, "hadron3.png")
 
     await client.process_commands(message)  #important
